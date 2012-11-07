@@ -1,0 +1,5 @@
+{
+    "auth_token": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "campfire_prefix": "someprefix", // someprefix.campfirenow.com
+    "room_name": "My Channel"
+}
