@@ -17,7 +17,7 @@ def do_election_updates(room):
 
     for state in update.keys():
         if (update[state] is not None) and (
-                election_results[state] == None or
+                election_results[state] is None or
                 election_results[state]['summary'] !=
                 update[state]['summary']):
             changes.append(update[state]['summary'])
