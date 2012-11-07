@@ -15,7 +15,9 @@ def do_election_updates(room):
 
     changes = []
 
-    for state in update.keys():
+    states = update.keys()
+    states.sort()
+    for state in states:
         if (update[state] is not None) and (
                 election_results[state] is None or
                 election_results[state]['summary'] !=
