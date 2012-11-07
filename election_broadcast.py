@@ -26,7 +26,7 @@ def do_election_updates(room):
         room.paste('\n'.join(changes))
 
     # Start a new timer
-    t = threading.Timer(60, do_election_updates, args=(room,))
+    t = threading.Timer(900, do_election_updates, args=(room,))
     t.start()
 
 
