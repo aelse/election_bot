@@ -13,13 +13,17 @@ def do_election_updates(room):
     print 'Checking feed...'
     update = results.fresh_data()
 
+    changes = []
+
     for state in update.keys():
         if (update[state] is not None) and (
                 election_results[state] == None or
                 election_results[state]['summary'] !=
                 update[state]['summary']):
-            room.speak(update[state]['summary'])
+            changes.append(update[state]['summary'])
             election_results[state] = update[state]
+    if len(changes):
+        room.paste('\n'.join(changes))
 
     # Start a new timer
     t = threading.Timer(60, do_election_updates, args=(room,))
